@@ -77,9 +77,14 @@ export default function Posts({ userId }) {
               <div>{post.owner.name}</div>
             </div>
             {(post.own) &&
-              <img src={require(`./assets/delete.png`)} className="delete-logo"
-                onClick={() => deletePost(post.id)}
-              ></img>
+              <div className='alter-class'>
+                <div className="alt-word"
+                  onClick={() => navigate(`/editPost/${post.id}`)}
+                >edit</div>
+                <img src={require(`./assets/delete.png`)} className="delete-logo"
+                  onClick={() => deletePost(post.id)}
+                ></img>
+              </div>
             }
             </div>
           <div className="background-text-color">{post.content}</div>

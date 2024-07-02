@@ -74,14 +74,21 @@ export default function Posts({ userId }) {
         <div className="post" key={post.id}>
           <div className="dataplusx">
             <div className='picAndData'>
-              <img alt='image of owner' className="rounded-image" src={`${imagesUrl}${post.owner.picture}`}
-                onClick={() => navigate(`/user/${post.owner.id}`)}
-              ></img>
+              { (post.owner.picture !== undefined) ?
+                <img alt='image of owner' className="rounded-image" src={`${imagesUrl}${post.owner.picture}`}
+                  onClick={() => navigate(`/user/${post.owner.id}`)}
+                ></img>:
+                <img alt='image of owner' className="rounded-image" src={require('./assets/user.png')}
+                  onClick={() => navigate(`/user/${post.owner.id}`)}
+                ></img>
+              }
               <div>{post.owner.name}</div>
             </div>
             {(post.own) &&
               <div className='alter-class'>
-                <div className="alt-word">edit</div>
+                <div className="alt-word"
+                  onClick={() => navigate(`/editPost/${post.id}`)}
+                >edit</div>
                 <img src={require(`./assets/delete.png`)} className="delete-logo"
                   onClick={() => deletePost(post.id)}
                 ></img>

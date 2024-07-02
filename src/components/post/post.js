@@ -12,18 +12,12 @@ const Post = () => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    //const pictureArray = document.querySelector('input[type="file"]');
-    //for (const picture of pictureArray.files) {
-    //  formData.append('pictures', picture);
-    //}
     await fetch(url, {
       method: 'POST',
       headers: {
         token
       },
       body: formData
-    }).then(response => {
-      console.log(response);
     });
     navigate('/posts');
   };

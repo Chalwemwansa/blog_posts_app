@@ -75,9 +75,14 @@ const Comment = () => {
             {comments.map( (comment, index ) => (
               <div className="comment-container" key={index}>
                 <div className="owner">
-                  <img className="owner-logo" src={`${imagesUrl}${comment.picture}`}
-                    onClick={() => navigate(`/user/${comment.id}`)}
-                  ></img>
+                  { (comment.picture !== undefined) ?
+                    <img className="owner-logo" src={`${imagesUrl}${comment.picture}`}
+                      onClick={() => navigate(`/user/${comment.id}`)}
+                    ></img>:
+                    <img className="owner-logo" src={require('./assets/user.png')}
+                      onClick={() => navigate(`/user/${comment.id}`)}
+                    ></img>
+                  }
                   <div className="owner-name">{comment.name}</div>
                 </div>
                 <div className="comment">{comment.comment}</div>
