@@ -11,7 +11,7 @@ export default function Posts({ userId }) {
   if (userId !== undefined) {
     url = `http://localhost:5000/posts/${userId}`;
   } else {
-    url = 'http://localhost:5000/posts';
+    url = 'http://localhost:5000/posts/owner';
   }
   let data;
   const [ posts, setPosts ] = useState([]);
