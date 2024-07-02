@@ -1,8 +1,10 @@
 // the component responsible for signing up a user to the api
 // import { useState } from "react";
 import './signup.css'
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
+  const navigate = useNavigate();
   // function that handles the input entered by the user
   const getUserData = async (e) => {
     e.preventDefault();
@@ -15,16 +17,22 @@ export default function Signup() {
   
     const url = 'http://localhost:5000/signup';
     let token;
-    const response = await fetch(url, {
-      method: 'POST',
-      body: formData,
-    })
-    .then(response => response.json())
-    .then(data => {
-      token = data.token;
-      localStorage.setItem('token', token);
-    });
-  };
+    try {
+      await fetch(url, {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => response.json())
+      .then(data => {
+        token = data.token;
+        console.log(token);
+        localStorage.setItem('token', token);
+        navigate('/posts');
+      });
+    } catch {
+
+    }
+  }
   
 
   return (

@@ -1,15 +1,23 @@
 .postsContainer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
     padding: 20px;
     margin-left: 20px;
     margin-top: 20px;
-    width: 743px
+    width: 100%;
 }
 
 .picturesContainer {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-    width: 700px;
+    width: 100%;
 }
 
 .picture {
@@ -23,6 +31,7 @@ img {
 }
 
 .inlineContent {
+    width: 90px;
     margin-top: 10px;
     display: flex;
     gap: 30px;
@@ -32,6 +41,7 @@ img {
     display: flex;
     gap: 10px;
     align-items: center;
+    width: 100%;
 }
 
 .rounded-image {
@@ -40,11 +50,16 @@ img {
     border-radius: 50%;
 }
 
+.logo-image:hover {
+    width: 32px;
+}
+
 .post {
+    display: block;
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: #f5f7fa;
-    width: 700px;
+    width: auto;
     padding: 20px;
     padding-left: 40px;
     border-radius: 10px;
@@ -54,14 +69,21 @@ img {
 .background-text-color {
     margin-bottom: 5px;
     margin-top: 5px;
-    width: 610px;
+    width: 100%;
     border-radius: 5px;
 }
 
-textarea {
-    margin-top: 8px;
-    border-radius: 5px;
-    width: 570px;
+.delete-logo:hover {
+    width: 45px;
+    height: 45px;
+}
+
+.delete-logo {
+    background-color: rgb(221, 202, 202);
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 50%;
 }
 
 .logo-image {
@@ -69,8 +91,21 @@ textarea {
     height: 30px;
 }
 
-.comment-section {
+.logo-eye:hover {
+    width: 22px;
+    height: 22px;
+}
+
+.logo-eye {
+    width: 20px;
+    height: 15px;
+    margin-left: 15px;
+}
+
+.dataplusx {
+    position: relative;
+    width: 100%;
     display: flex;
-    gap: 5px;
+    justify-content: space-between;
     align-items: center;
 }

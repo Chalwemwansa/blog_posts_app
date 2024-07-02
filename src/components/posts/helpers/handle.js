@@ -3,22 +3,37 @@ const token = localStorage.getItem('token');
 
 const handle = {
   like: async (postId) => {
-    const url = `http://localhost:5000/like/${postId}`
+    const url = `http://localhost:5000/like/${postId}`;
+    let response;
+    try {
+      response = await fetch(url, {
+        method: 'PUT',
+        headers: {
+          token,
+        },
+      });
+    } catch {
 
-    const response = await fetch(url, {
-      method: 'PUT',
-    });
+    }
 
     return response;
   },
 
-  comment: async (postId, comment) => {
-    const url = `http://localhost:5000/comment/${postId}`;
+  delete: async (postId) => {
+    const url = `http://localhost:5000/post/${postId}`;
+    let response;
+    try {
+      response = await fetch(url, {
+        method: 'DELETE',
+        headers: {
+          token,
+        },
+      });
+    } catch {
 
-    const reponse = await fetch(url, {
-      method: 'PUT',
-      data: JSON.stringify({ comment, }),
-    });
+    }
+
+    return response;
   }
 };
 
