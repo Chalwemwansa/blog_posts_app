@@ -25,7 +25,6 @@ export default function Signup() {
       .then(response => response.json())
       .then(data => {
         token = data.token;
-        console.log(token);
         localStorage.setItem('token', token);
         navigate('/posts');
       });

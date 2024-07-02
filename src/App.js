@@ -3,6 +3,9 @@ import Posts from './components/posts/posts';
 import Comments from './components/comments/comments';
 import Signin from './components/signin/signin';
 import Likes from './components/likes/likes';
+import AboutUser from './components/user/aboutUser';
+import Users from './components/users/users';
+import Post from './components/post/post';
 import { BrowserRouter as Router, Routes , Route} from 'react-router-dom';
 
 function App() {
@@ -15,6 +18,9 @@ function App() {
           <Route path='/posts' Component={Posts}/>
           <Route path='/comments/:postId' Component={Comments}/>
           <Route path='/likes/:postId' Component={Likes}/>
+          <Route path='/user/:userId' Component={AboutUser}/>
+          <Route path='/users' Component={Users}/>
+          <Route path='/post' Component={Post}/>
         </Routes>
       </Router>
     </>

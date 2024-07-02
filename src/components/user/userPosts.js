@@ -61,13 +61,13 @@ export default function Posts({ userId }) {
     (async () => {
       await fetchData();
     })();
-  });
+  }, [posts]);
 
   const imagesUrl = 'http://localhost:5000/uploads/';
   // if loaded load the products from the db
   return (
     <>
-    <Header caller='posts'/>
+    <Header caller='user'/>
     <div className="postsContainer">
     {posts.map(post => (
         <div className="post" key={post.id}>

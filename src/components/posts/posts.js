@@ -3,11 +3,17 @@ import { useEffect, useState } from "react";
 import './posts.css';
 import { useNavigate } from "react-router-dom";
 import handle from './helpers/handle';
+import Header from "../header/header";
 
-export default function Posts() {
+export default function Posts({ userId }) {
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
-  const url = 'http://localhost:5000/posts';
+  let url;
+  if (userId !== undefined) {
+    url = `http://localhost:5000/posts/${userId}`;
+  } else {
+    url = 'http://localhost:5000/posts';
+  }
   let data;
   const [ posts, setPosts ] = useState([]);
 
@@ -61,18 +67,25 @@ export default function Posts() {
   const imagesUrl = 'http://localhost:5000/uploads/';
   // if loaded load the products from the db
   return (
+    <>
+    <Header caller='posts'/>
     <div className="postsContainer">
-      {posts.map(post => (
+    {posts.map(post => (
         <div className="post" key={post.id}>
           <div className="dataplusx">
             <div className='picAndData'>
-              <img alt='image of owner' className="rounded-image" src={`${imagesUrl}${post.owner.picture}`}></img>
+              <img alt='image of owner' className="rounded-image" src={`${imagesUrl}${post.owner.picture}`}
+                onClick={() => navigate(`/user/${post.owner.id}`)}
+              ></img>
               <div>{post.owner.name}</div>
             </div>
             {(post.own) &&
-              <img src={require(`./assets/delete.png`)} className="delete-logo"
-                onClick={() => deletePost(post.id)}
-              ></img>
+              <div className='alter-class'>
+                <div className="alt-word">edit</div>
+                <img src={require(`./assets/delete.png`)} className="delete-logo"
+                  onClick={() => deletePost(post.id)}
+                ></img>
+              </div>
             }
             </div>
           <div className="background-text-color">{post.content}</div>
@@ -103,5 +116,6 @@ export default function Posts() {
         </div>
       ))}
     </div>
+    </>
   )
 }

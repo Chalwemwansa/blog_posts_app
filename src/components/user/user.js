@@ -27,8 +27,7 @@ export default function User({ userId }) {
       (async () => {
         await fetchData();
       })();
-    }
-  )
+    }, [data])
 
   function exists(item) {
     return (data[item] !== undefined);
