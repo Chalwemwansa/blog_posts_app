@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import handle from './helpers/helper';
 import './comments.css'
+import Back from '../back/back';
 
 const Comment = () => {
   const navigate = useNavigate();
@@ -20,11 +21,6 @@ const Comment = () => {
       await handle.comment(postId, comment);
     })();
     setcomment('');
-  }
-
-  // function that handles what happens when back arrow is pressed
-  function handleBack () {
-    navigate(-1);
   }
 
   // function that fetches data from the database
@@ -50,26 +46,8 @@ const Comment = () => {
 
   return (
     <>
-      <div className="back-bar-wrapper">
-        <div className="back-bar">
-          <img className='back-bar-image' src={require('./assets/back.png')}
-            onClick={handleBack}
-          ></img>
-          <h3>Comments</h3>
-        </div>
-      </div>
+      <Back page={"comments"}/>
       <div className="main-container">
-      <div className="comment-section-wrapper">
-            <div className="comment-section">
-              <textarea id='comment' placeholder="add a comment"
-                value={comment}
-                onChange={(e) => setcomment(e.target.value)}
-              ></textarea>
-              <img className='logo-image' alt='' src={require(`./assets/send-button.png`)}
-                onClick={handleComment}
-              ></img>
-            </div>
-        </div>
         <div className="container">
           <div className="comments-container">
             {comments.map( (comment, index ) => (
@@ -91,6 +69,17 @@ const Comment = () => {
           </div>
         </div>
       </div>
+      <div className="comment-section-wrapper">
+            <div className="comment-section">
+              <textarea id='comment' placeholder="add a comment"
+                value={comment}
+                onChange={(e) => setcomment(e.target.value)}
+              ></textarea>
+              <img className='logo-image' alt='' src={require(`./assets/send-button.png`)}
+                onClick={handleComment}
+              ></img>
+            </div>
+        </div>
     </>
   );
 };

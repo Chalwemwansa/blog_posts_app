@@ -15,9 +15,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #becbff;
     background-color: #f5f7fa;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border: 1px solid lightgray;
     margin-top: 15px;
     border-radius: 10px;

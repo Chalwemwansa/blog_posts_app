@@ -1,0 +1,46 @@
+.post-form {
+    width: 95%;
+    max-width: 600px;
+    display: block;
+    padding: 20px;
+}
+
+.imageInput {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 50px;
+}
+
+.imageInput:hover {
+    background-color: white;;
+}
+
+.main-post-container {
+    display: block;
+    margin-left: 2%;
+    margin-top: 90px;
+}
+
+.post-form-section {
+    display: block;
+}
+
+.postInput {
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid lightgray;
+    height: 50px;
+}
+
+.button-class:hover {
+    background-color: #e6f3f2;
+}
+
+.button-class {
+    height: 30px;
+}
+
+.myText {
+    height: 100px;
+}

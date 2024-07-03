@@ -8,13 +8,15 @@
 }
 
 .comments-container {
-    display: block;
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
 }
 
 textarea {
     border-radius: 10px;
-    width: calc(90% - 37px);
+    width: calc(600px - 37px);
 }
 
 textarea:hover {
@@ -31,13 +33,15 @@ textarea:hover {
 }
 
 .container {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     margin-top: 60px;
     margin-bottom: 100px;
 }
 
 .comment-container {
-    background-color: #e6f3f2;
     border-radius: 10px;
     margin-top: 20px;
     width: 100%;
@@ -56,6 +60,9 @@ textarea:hover {
 }
 
 .comment {
+    max-width: 100%;
+    border-radius: 5px;
+    background-color: #f5f7fa;
     padding-left: 10px;
 }
 
@@ -73,31 +80,4 @@ textarea:hover {
     bottom: 0;
     width: 100%;
     background-color: white;
-}
-
-.back-bar-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-left: 10px;
-}
-
-.back-bar-wrapper {
-    background-color: white;
-    display: flex;
-    position: fixed;
-    flex-wrap: wrap;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.back-bar {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    display: flex;
-    gap: calc(42% - (65px));
-    width: 100%;
-    align-items: center;
-    background-color: #f5f7fa;
 }

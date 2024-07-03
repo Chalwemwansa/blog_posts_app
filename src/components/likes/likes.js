@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import './likes.css';
+import Back from '../back/back';
 
 const Likes = () => {
   const navigate = useNavigate();
@@ -34,13 +36,14 @@ const Likes = () => {
 
   return (
     <>
+      <Back page={'likes'}/>
       <div className="likes-class">
         {likes.map((like, index) => (
           <div className="like-class" key={index}>
-            <img className='owner-logo'src={`${imagesUrl}${like.picture}`}
+            <img className='like-owner-logo'src={`${imagesUrl}${like.picture}`}
               onClick={() => navigate(`/user/${like.id}`)}
             ></img>
-            <div className="owner-name">{like.name}</div>
+            <div className="like-owner-name">{like.name}</div>
           </div>
         ))}
       </div>

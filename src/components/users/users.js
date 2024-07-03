@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Header from "../header/header";
 import { useNavigate } from "react-router-dom";
+import './users.css'
 
 const Users = () => {
   const navigate = useNavigate();
@@ -38,15 +39,15 @@ const Users = () => {
 
     return (
       <>
-        <div>
-          <Header caller={'users'}/>
+        <Header caller={'users'}/>
+        <div className="users-container">
           {users.map(user => (
-            <div key={user.id}>
+            <div key={user.id} className="each-user">
               {(user.picture !== undefined) ?
-                <img src={`${imageUrl}${user.picture}`}
+                <img className='each-image' src={`${imageUrl}${user.picture}`}
                   onClick={() => navigate(`/user/${user.id}`)}
                 ></img>:
-                <img src={require('./assets/user.png')}
+                <img className='each-image' src={require('./assets/user.png')}
                   onClick={() => navigate(`/user/${user.id}`)}
                 ></img>
               }

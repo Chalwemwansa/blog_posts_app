@@ -1,0 +1,81 @@
+.editform {
+    display: block;
+    width: 80%;
+    max-width: 530px;
+}
+
+.edit-image-container {
+    display: flex;
+    position: relative;
+}
+
+.editportion {
+    display: block;
+}
+
+.edit-input-section {
+    width: 100%;
+    margin-bottom: 30px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.edit-container {
+    margin-top: 100px;
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.editdelete:hover {
+    background-color: #d7efed;
+}
+
+.editpic-p {
+    width: 250px;
+    height: 250px;
+}
+
+.editdelete {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 30px;
+    background-color: white;
+    height: 30px;
+    padding: 5px;
+    border-radius: 50%;
+
+}
+
+.editimages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 525px;
+    gap: 20px;
+}
+
+.edit-image-container {
+    width: 250px;
+    height: 250px;
+}
+
+.myimg:hover {
+    background-color: white;
+}
+
+.edit-sub:hover {
+    background-color: #d7efed;
+}
+
+.edit-sub {
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #f5f7fa;
+    border: 1px solid lightgray;
+    margin: auto;
+}

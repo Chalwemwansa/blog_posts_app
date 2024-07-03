@@ -1,6 +1,7 @@
 // the component responsiblle for uploading a post to the api
 import { useNavigate } from "react-router-dom";
 import Header from "../header/header";
+import './post.css';
 
 
 const Post = () => {
@@ -25,21 +26,24 @@ const Post = () => {
   return (
     <>
       <Header caller={'post'}/>
-      <form onSubmit={postData}>
-        <div>
+      <div className="main-post-container">
+      <form onSubmit={postData} className="post-form">
+        <div className="post-form-section">
           <label className="postLabel">type</label>
           <input id='type' type='text' className="postInput" name="type"></input>
         </div>
-        <div>
+        <div className="post-form-section">
           <label className="postLabel">choose images</label>
-          <input type='file' id='pictures' className="postInput" name="pictures" multiple></input>
+          <input type='file' id='pictures' className="imageInput" name="pictures" multiple></input>
         </div>
-        <div>
+        <div className="post-form-section">
           <label className="postLabel">Content</label>
-          <textarea type='text' id='content' name="content" className="postInput" ></textarea>
+          <textarea type='text' id='content' name="content" className="postInput myText"
+          ></textarea>
         </div>
         <button type='submit' className="button-class">Post</button>
       </form>
+      </div>
     </>
   )
 

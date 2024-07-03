@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import './editPost.css'
+import Header from '../header/header';
 
 const EditPost = () => {
   const postId = useParams().postId;
@@ -68,38 +70,44 @@ const EditPost = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handle}>
-        <div>
+    <>
+    <Header caller={'post'}/>
+    <div className="edit-container">
+      <form onSubmit={handle} className="editform">
+        <div className="editportion">
           <label>type</label>
           <input type='text' name='type' id='type' value={type}
+            className="edit-input-section"
             onChange={(e) => settype(e.target.value)}
           ></input>
         </div>
-        <div>
+        <div className="editportion">
           <label>content</label>
-          <textarea id='content' name='content'
+          <textarea id='content' name='content' className="edit-input-section"
             value={content}
             onChange={(e) => setcontent(e.target.value)}
           ></textarea>
         </div>
-        <div>
+        <div className="editportion">
           <label>add pictures</label>
-          <input type='file' id='pictures' name='pictures' multiple></input>
+          <input type='file' id='pictures' name='pictures' multiple
+            className="edit-input-section myimg"
+          ></input>
         </div>
-        <button type='submit'>Edit</button>
+        <button className='edit-sub' type='submit'>Edit</button>
       </form>
-      <div>
+      <div className="editimages">
         {pictures.map((picture, index) => (
-          <div key={index}>
-            <img src={require('./assets/delete.png')}
+          <div key={index} className="edit-image-container">
+            <img className='editdelete' src={require('./assets/delete.png')}
               onClick={() => handlePic(picture)}
             ></img>
-            <img src={`${imageUrl}${picture}`}></img>
+            <img className='editpic-p' src={`${imageUrl}${picture}`}></img>
           </div>
         ))}
       </div>
     </div>
+    </>
   )
 };
 
