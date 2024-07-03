@@ -1,14 +1,13 @@
-.postsContainer {
+.userpostsContainer {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     align-self: center;
     padding: 20px;
-    margin-left: 20px;
-    margin-top: 80px;
     width: 100%;
+    margin-top: 5px;
 }
 
 .picturesContainer {
@@ -25,7 +24,7 @@
 }
 
 img {
-    width: 300px;
+    width: 250px;
     height: 250px;
     border-radius: 5px;
 }
@@ -56,12 +55,12 @@ img {
 
 .post {
     display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
     background-color: #f5f7fa;
-    width: auto;
+    width: 100%;
+    max-width: 555px;
     padding: 20px;
-    padding-left: 40px;
     border-radius: 10px;
     border: 1px solid lightgray;
 }

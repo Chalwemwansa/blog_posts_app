@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Header from '../header/header';
+import './editUser.css';
 
 const EditUser = () => {
   const userId = useParams().postId;
@@ -79,53 +81,64 @@ const EditUser = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handle}>
-        <div>
-          <label>name</label>
-          <input type='text' name='name' id='name' value={name}
-            onChange={(e) => setname(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          <label>email</label>
-          <input value={email} id='email' name='email'
-            onChange={(e) => setemail(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          <label>age</label>
-          <input value={age} id='age' name='age'
-            onChange={(e) => setage(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          <label>gender</label>
-          <input value={gender} id='gender' name='gender'
-            onChange={(e) => setgender(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          <label>new picture</label>
-          <input type='file' id='picture' name='picture'></input>
-        </div>
-        <div>
-          <label>about</label>
-          <input value={about} id='about' name='about'
-            onChange={(e) => setabout(e.target.value)}
-          ></input>
-        </div>
-        <button type='submit'>Edit</button>
-      </form>
-      <div>
-        { haspic && <img src={require('./assets/delete.png')}
+    <>
+    <Header caller={'user'}/>
+    <div className="main-of-user">
+      <div className="pic-of-user">
+        { haspic && <img className="user-del" src={require('./assets/delete.png')}
             onClick={() => handlePic()}
           ></img>
         }
-
-        <img src={ picture }></img>
+        <img className="usr" src={ picture }></img>
       </div>
+      <form onSubmit={handle} className="m-form">
+        <div className="m-subform">
+        <div className="m-section">
+          <label>name:</label>
+          <input type='text' name='name' id='name' value={name}
+            className="m-input"
+            onChange={(e) => setname(e.target.value)}
+          ></input>
+        </div>
+        <div className="m-section">
+          <label>email:</label>
+          <input value={email} id='email' name='email'
+            className="m-input"
+            onChange={(e) => setemail(e.target.value)}
+          ></input>
+        </div>
+        <div className="m-section">
+          <label>age:</label>
+          <input value={age} id='age' name='age'
+            className="m-input"
+            onChange={(e) => setage(e.target.value)}
+          ></input>
+        </div>
+        <div className="m-section">
+          <label>gender:</label>
+          <input value={gender} id='gender' name='gender'
+            className="m-input"
+            onChange={(e) => setgender(e.target.value)}
+          ></input>
+        </div>
+        <div className="m-section">
+          <label>new picture:</label>
+          <input type='file' id='picture' name='picture'
+            className="m-input m-img"
+          ></input>
+        </div>
+        <div className="m-section">
+          <label>about {name}</label>
+          <input value={about} id='about' name='about'
+            className="m-about"
+            onChange={(e) => setabout(e.target.value)}
+          ></input>
+        </div>
+        <button className="m-button" type='submit'>Edit</button>
+      </div>
+      </form>
     </div>
+    </>
   )
 };
 

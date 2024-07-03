@@ -68,7 +68,7 @@ export default function Posts({ userId }) {
   return (
     <>
     <Header caller='user'/>
-    <div className="postsContainer">
+    <div className="userpostsContainer">
     {posts.map(post => (
         <div className="post" key={post.id}>
           <div className="dataplusx">

@@ -1,0 +1,78 @@
+.main-of-user {
+    margin-top: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.user-del {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    top: 20px;
+    right: 50px;
+}
+
+.usr {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.pic-of-user {
+    display: flex;
+    position: relative;
+    width: 250px;
+    justify-content: center;
+}
+
+.m-input {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid lightgray;
+    border-radius: 3px;;
+}
+
+.m-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.m-subform {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.m-button:hover {
+    background-color: #d7efed;
+}
+
+.m-img:hover {
+    background-color: white;
+}
+
+.m-button {
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+.m-section {
+    width: 100%;
+}
+
+.m-about {
+    width: 100%;
+    height: 80px;
+    border-radius: 5px;
+}
