@@ -1,0 +1,24 @@
+.dele-pic {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(223, 187, 187);
+    border-radius: 50%;
+}
+
+.dele-word {
+    color: red;
+}
+
+.dele {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+    background-color: rgb(229, 166, 166);
+    width: 100%;
+    height: 100vh;
+}

@@ -110,6 +110,9 @@ export default function User({ userId }) {
             }
       </div>
     </div>
+    <div className='u-p'>
+        <h3>posts by {data.name}</h3>
+    </div>
     </>
   )
 };

@@ -8,6 +8,7 @@ import Users from './components/users/users';
 import Post from './components/post/post';
 import EditPost from './components/post/editPost';
 import EditUser from './components/user/editUser';
+import Err from './components/error/error';
 import { BrowserRouter as Router, Routes , Route} from 'react-router-dom';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path='/post' Component={Post}/>
           <Route path='/editPost/:postId' Component={EditPost}/>
           <Route path='/editUser' Component={EditUser}/>
+          <Route path='/error' Component={Err}/>
         </Routes>
       </Router>
     </>

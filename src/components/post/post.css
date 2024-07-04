@@ -18,7 +18,7 @@
 .main-post-container {
     display: block;
     margin-left: 2%;
-    margin-top: 90px;
+    margin-top: 80px;
 }
 
 .post-form-section {
@@ -43,4 +43,11 @@
 
 .myText {
     height: 100px;
+}
+
+.p-name {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

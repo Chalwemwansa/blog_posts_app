@@ -98,3 +98,11 @@
     padding-right: 3px;
     border-radius: 10px;
 }
+
+.u-p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}

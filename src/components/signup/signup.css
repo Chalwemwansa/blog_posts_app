@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    padding-top: 15vh;
 }
 
 .formClass {
@@ -18,4 +18,15 @@
     border-radius: 10px;
     border-width: 1px;
     border-color: lightgray;
+}
+
+.signup-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f7fa;
+    border: 1px solid lightgray;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    height: 50px;
 }

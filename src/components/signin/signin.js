@@ -8,6 +8,7 @@ const Signin = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const url = 'http://localhost:5000/signin';
+    try {
       await fetch(url, {
         method: 'POST',
         body: formData,
@@ -21,9 +22,18 @@ const Signin = () => {
           navigate('/posts');
         }
       });
-    
+    } catch {
+      navigate('/error');
+    }
   }
   return (
+    <>
+    <div className='s-img'>
+      <h3 className='s-word'>sign in</h3>
+      <h7 className="s-word1" 
+        onClick={() => navigate('/signup')}
+      >sign up</h7>
+    </div>
     <div className='form-container'>
       <form className='form-class' onSubmit={handleSignin}>
         <div className='form-element'>
@@ -34,9 +44,10 @@ const Signin = () => {
           <label className="label-class">password</label>
           <input className="input-class" type='password' id='password' name='password' required></input>
         </div>
-        <button type='submit' className='button-class form-element'>signin</button>
+        <button type='submit' className='button-class form-element'>sign in</button>
       </form>
     </div>
+  </>
   )
 };
 

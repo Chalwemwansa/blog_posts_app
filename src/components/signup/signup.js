@@ -1,6 +1,7 @@
 // the component responsible for signing up a user to the api
 // import { useState } from "react";
-import './signup.css'
+import './signup.css';
+import Back from '../back/back';
 import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
@@ -33,6 +34,8 @@ export default function Signup() {
   
 
   return (
+    <>
+    <Back page={'sign up'}/>
     <div className='divClass'>
       <form className="row g-3 formClass" onSubmit={getUserData}>
         <div className="col-md-6">
@@ -59,7 +62,7 @@ export default function Signup() {
         </div>
         <div className='col-md-6'>
           <label className="form-label">sex</label>
-          <input type='text' id='gender' name='sex' placeholder='sex' className='form-control'></input>
+          <input type='text' id='gender' name='gender' placeholder='sex' className='form-control'></input>
         </div>
         <div className='col-md-6'>
           <label className="form-label">profile picture</label>
@@ -72,5 +75,6 @@ export default function Signup() {
         <button className='button-class' type='submit'>sign up</button>
       </form>
     </div>
+    </>
   );
 }

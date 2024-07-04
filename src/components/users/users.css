@@ -1,6 +1,6 @@
 .users-container {
     display: block;
-    margin-top: 90px;
+    margin-top: 80px;
     padding-left: 25px;;
     justify-content: center;
     padding-bottom: 10px;
@@ -19,3 +19,17 @@
     border-radius: 50%;
 }
 
+.u-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.u-text {
+    margin-right: 25px; 
+}
+
+.u-word {
+    font-weight: 400;
+}

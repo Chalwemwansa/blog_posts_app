@@ -27,6 +27,9 @@ const Post = () => {
     <>
       <Header caller={'post'}/>
       <div className="main-post-container">
+        <div className="p-name">
+          <h3 className="p-text">make a post</h3>
+        </div>
       <form onSubmit={postData} className="post-form">
         <div className="post-form-section">
           <label className="postLabel">type</label>

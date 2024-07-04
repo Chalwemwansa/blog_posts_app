@@ -41,6 +41,9 @@ const Users = () => {
       <>
         <Header caller={'users'}/>
         <div className="users-container">
+          <div className="u-header">
+            <h2 className="u-text">users</h2>
+          </div>
           {users.map(user => (
             <div key={user.id} className="each-user">
               {(user.picture !== undefined) ?
@@ -51,7 +54,7 @@ const Users = () => {
                   onClick={() => navigate(`/user/${user.id}`)}
                 ></img>
               }
-              <h4>{user.name}</h4>
+              <h4 className="u-word">{user.name}</h4>
             </div>
           ))}
         </div>
