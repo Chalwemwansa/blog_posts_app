@@ -18,14 +18,14 @@ function App() {
         <Routes>
           <Route exact path='/' Component={Signin}/>
           <Route path='/signup' Component={Signup}/>
-          <Route path='/posts' Component={Posts}/>
-          <Route path='/comments/:postId' Component={Comments}/>
-          <Route path='/likes/:postId' Component={Likes}/>
-          <Route path='/user/:userId' Component={AboutUser}/>
-          <Route path='/users' Component={Users}/>
-          <Route path='/post' Component={Post}/>
-          <Route path='/editPost/:postId' Component={EditPost}/>
-          <Route path='/editUser' Component={EditUser}/>
+          <Route path='/posts/:token' Component={Posts}/>
+          <Route path='/comments/:postId/:token' Component={Comments}/>
+          <Route path='/likes/:postId/:token' Component={Likes}/>
+          <Route path='/user/:userId/:token' Component={AboutUser}/>
+          <Route path='/users/:token' Component={Users}/>
+          <Route path='/post/:token' Component={Post}/>
+          <Route path='/editPost/:postId/:token' Component={EditPost}/>
+          <Route path='/editUser/:token' Component={EditUser}/>
           <Route path='/error' Component={Err}/>
         </Routes>
       </Router>

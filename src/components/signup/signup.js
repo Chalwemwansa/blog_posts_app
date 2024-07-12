@@ -17,7 +17,6 @@ export default function Signup() {
     formData.append('picture', picture);
   
     const url = 'http://localhost:5000/signup';
-    let token;
     try {
       await fetch(url, {
         method: 'POST',
@@ -25,7 +24,8 @@ export default function Signup() {
       })
       .then(response => response.json())
       .then(data => {
-        navigate('/');
+        localStorage.setItem('token', data.token);
+        navigate('/posts' +  `/${data.token}`);
       });
     } catch {
 

@@ -1,8 +1,7 @@
 // this file contains all the code for handling events for the post page
-const token = localStorage.getItem('token');
 
 const handle = {
-  like: async (postId) => {
+  like: async (postId, token) => {
     const url = `http://localhost:5000/like/${postId}`;
     let response;
     try {
@@ -19,7 +18,7 @@ const handle = {
     return response;
   },
 
-  delete: async (postId) => {
+  delete: async (postId, token) => {
     const url = `http://localhost:5000/post/${postId}`;
     let response;
     try {

@@ -8,7 +8,7 @@ import Back from '../back/back';
 const Likes = () => {
   const navigate = useNavigate();
   const postId = useParams().postId;
-  const token = localStorage.getItem('token');
+  const token = useParams().token;
   const imagesUrl = 'http://localhost:5000/uploads/';
   const url = `http://localhost:5000/post/${postId}`
   const [ likes, setLikes ] = useState([]);
@@ -41,7 +41,7 @@ const Likes = () => {
         {likes.map((like, index) => (
           <div className="like-class" key={index}>
             <img className='like-owner-logo'src={`${imagesUrl}${like.picture}`}
-              onClick={() => navigate(`/user/${like.id}`)}
+              onClick={() => navigate(`/user/${like.id}/${token}`)}
             ></img>
             <div className="like-owner-name">{like.name}</div>
           </div>

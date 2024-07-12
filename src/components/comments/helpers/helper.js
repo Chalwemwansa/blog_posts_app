@@ -1,8 +1,7 @@
 // function that handles posting of a comment
-const token = localStorage.getItem('token');
 
 const handle = {
-  comment: async (postId, comment) => {
+  comment: async (postId, comment, token) => {
     const url = `http://localhost:5000/comment/${postId}`;
     let response;
     try {

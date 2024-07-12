@@ -4,11 +4,12 @@ import UserPosts from './userPosts';
 import { useParams } from "react-router-dom";
 
 const AboutUser = () => {
+  const token = useParams().token;
   const userId = useParams().userId;
   return (
     <div>
-      <User userId={userId}/>
-      <UserPosts userId={userId}/>
+      <User userId={userId} token={token}/>
+      <UserPosts userId={userId} token={token}/>
     </div>
   )
 }

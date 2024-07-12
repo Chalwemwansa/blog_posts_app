@@ -6,8 +6,7 @@ import Header from '../header/header';
 import './editUser.css';
 
 const EditUser = () => {
-  const userId = useParams().postId;
-  const token = localStorage.getItem('token');
+  const token = useParams().token;
   // url for editing and getting a post
   const url = `http://localhost:5000/user`;
   const imageUrl = 'http://localhost:5000/uploads/';
@@ -82,7 +81,7 @@ const EditUser = () => {
 
   return (
     <>
-    <Header caller={'user'}/>
+    <Header caller={'user'} token={token}/>
     <div className="main-of-user">
       <div className="pic-of-user">
         { haspic && <img className="user-del" src={require('./assets/delete.png')}
@@ -129,10 +128,10 @@ const EditUser = () => {
         </div>
         <div className="m-section">
           <label>about {name}</label>
-          <input value={about} id='about' name='about'
+          <textarea value={about} id='about' name='about'
             className="m-about"
             onChange={(e) => setabout(e.target.value)}
-          ></input>
+          ></textarea>
         </div>
         <button className="m-button" type='submit'>Edit</button>
       </div>

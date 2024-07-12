@@ -7,8 +7,8 @@ import './comments.css'
 import Back from '../back/back';
 
 const Comment = () => {
+  const token = useParams().token;
   const navigate = useNavigate();
-  const token = localStorage.getItem('token');
   const imagesUrl = 'http://localhost:5000/uploads/';
   const [ comments, setComments ] = useState([]);
   const [ comment, setcomment ] = useState('');
@@ -18,7 +18,8 @@ const Comment = () => {
   // function that posts a comment and clears the textField
   function handleComment() {
     (async () => {
-      await handle.comment(postId, comment);
+      await handle.comment(postId, comment, token);
+      fetchData();
     })();
     setcomment('');
   }
@@ -55,10 +56,10 @@ const Comment = () => {
                 <div className="owner">
                   { (comment.picture !== undefined) ?
                     <img className="owner-logo" src={`${imagesUrl}${comment.picture}`}
-                      onClick={() => navigate(`/user/${comment.id}`)}
+                      onClick={() => navigate(`/user/${comment.id}/${token}`)}
                     ></img>:
                     <img className="owner-logo" src={require('./assets/user.png')}
-                      onClick={() => navigate(`/user/${comment.id}`)}
+                      onClick={() => navigate(`/user/${comment.id}/${token}`)}
                     ></img>
                   }
                   <div className="owner-name">{comment.name}</div>

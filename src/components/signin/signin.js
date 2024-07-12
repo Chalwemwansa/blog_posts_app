@@ -19,7 +19,7 @@ const Signin = () => {
       .then(data => {
         if (data.token !== undefined) {
           localStorage.setItem('token', data.token);
-          navigate('/posts');
+          navigate('/posts' + `/${data.token}`);
         }
       });
     } catch {

@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Header from "../header/header";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import './users.css'
 
 const Users = () => {
+  const token = useParams().token;
   const navigate = useNavigate();
   const url = 'http://localhost:5000/users';
   const imageUrl = 'http://localhost:5000/uploads/';
-  const token = localStorage.getItem('token');
 
   const [ users, setUsers ] = useState([]);
 
@@ -39,7 +39,7 @@ const Users = () => {
 
     return (
       <>
-        <Header caller={'users'}/>
+        <Header caller={'users'} token={token}/>
         <div className="users-container">
           <div className="u-header">
             <h2 className="u-text">users</h2>
@@ -48,10 +48,10 @@ const Users = () => {
             <div key={user.id} className="each-user">
               {(user.picture !== undefined) ?
                 <img className='each-image' src={`${imageUrl}${user.picture}`}
-                  onClick={() => navigate(`/user/${user.id}`)}
+                  onClick={() => navigate(`/user/${user.id}/${token}`)}
                 ></img>:
                 <img className='each-image' src={require('./assets/user.png')}
-                  onClick={() => navigate(`/user/${user.id}`)}
+                  onClick={() => navigate(`/user/${user.id}/${token}`)}
                 ></img>
               }
               <h4 className="u-word">{user.name}</h4>

@@ -1,13 +1,12 @@
 // component that is used to get user data from the database
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './user.css'
 import singout from './signout';
 import deleteuser from './deleteuser';
 import { useEffect, useState } from "react";
 
-export default function User({ userId }) {
+export default function User({ userId, token }) {
   const navigate = useNavigate();
-  const token = localStorage.getItem('token');
   const url = `http://localhost:5000/user/${userId}`;
   const imageUrl = 'http://localhost:5000/uploads/';
 
@@ -28,7 +27,7 @@ export default function User({ userId }) {
 
   function handledelete () {
     (async () => {
-      await deleteuser();
+      await deleteuser(token);
       localStorage.removeItem('token');
       navigate('/');
     })();
@@ -36,7 +35,7 @@ export default function User({ userId }) {
 
   function handlesignout () {
     (async () => {
-      await singout();
+      await singout(token);
       localStorage.removeItem('token');
       navigate('/');
     })();
@@ -47,7 +46,7 @@ export default function User({ userId }) {
       (async () => {
         await fetchData();
       })();
-    }, [data])
+    }, [])
 
   function exists(item) {
     return (data[item] !== undefined);
@@ -79,7 +78,7 @@ export default function User({ userId }) {
             </div>}
           {exists('gender') &&
             <div className='content-section'>
-              <h5 className="section-name">gender: </h5>
+              <h5 className="section-name">sex: </h5>
               <t className="section-content">{data.gender}</t>
             </div>
           }
@@ -92,7 +91,7 @@ export default function User({ userId }) {
             {(userId === 'owner') &&
               <div className='small-header'>
                 <div className='small-header-component'
-                  onClick={() => navigate('/editUser')}
+                  onClick={() => navigate('/editUser' + `/${token}`)}
                 >
                   edit
                 </div>

@@ -1,5 +1,5 @@
 // the component responsiblle for uploading a post to the api
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Header from "../header/header";
 import './post.css';
 
@@ -7,7 +7,7 @@ import './post.css';
 const Post = () => {
   const navigate = useNavigate();
   const url = 'http://localhost:5000/post';
-  const token = localStorage.getItem('token');
+  const token = useParams().token;;
 
   async function postData (e) {
     e.preventDefault();
@@ -20,12 +20,12 @@ const Post = () => {
       },
       body: formData
     });
-    navigate('/posts');
+    navigate('/posts' + `/${token}`);
   };
 
   return (
     <>
-      <Header caller={'post'}/>
+      <Header caller={'post'} token={token}/>
       <div className="main-post-container">
         <div className="p-name">
           <h3 className="p-text">make a post</h3>

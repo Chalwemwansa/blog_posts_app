@@ -4,9 +4,8 @@ import { useNavigate } from "react-router-dom";
 import handle from '../posts/helpers/handle';
 import Header from "../header/header";
 
-export default function Posts({ userId }) {
+export default function Posts({ userId, token }) {
   const navigate = useNavigate();
-  const token = localStorage.getItem('token');
   let url;
   if (userId !== undefined) {
     url = `http://localhost:5000/posts/${userId}`;
@@ -18,25 +17,27 @@ export default function Posts({ userId }) {
 
   // handling the comments from a post
   function commentsHandler (post_id) {
-    navigate(`/comments/${post_id}`);
+    navigate(`/comments/${post_id}` + `/${token}`);
   };
 
   // likeshandler that shows the people that liked a particular post
   function likeshandler (post_id) {
-    navigate(`/likes/${post_id}`);
+    navigate(`/likes/${post_id}` + `/${token}`);
   }
 
   // handling liking of posts
   function likeHandler (post_id) {
     ( async () => {
-      await handle.like(post_id);
+      await handle.like(post_id, token);
+      fetchData();
     })();
   }
 
   // handles post deletion from the app
   function deletePost (post_id) {
     (async () => {
-      await handle.delete(post_id);
+      await handle.delete(post_id, token);
+      fetchData();
     })();
   }
 
@@ -61,13 +62,13 @@ export default function Posts({ userId }) {
     (async () => {
       await fetchData();
     })();
-  }, [posts]);
+  }, []);
 
   const imagesUrl = 'http://localhost:5000/uploads/';
   // if loaded load the products from the db
   return (
     <>
-    <Header caller='user'/>
+    <Header caller='user' token={token}/>
     <div className="userpostsContainer">
     {posts.map(post => (
         <div className="post" key={post.id}>
@@ -79,7 +80,7 @@ export default function Posts({ userId }) {
             {(post.own) &&
               <div className='alter-class'>
                 <div className="alt-word"
-                  onClick={() => navigate(`/editPost/${post.id}`)}
+                  onClick={() => navigate(`/editPost/${post.id}/${token}`)}
                 >edit</div>
                 <img src={require(`./assets/delete.png`)} className="delete-logo"
                   onClick={() => deletePost(post.id)}

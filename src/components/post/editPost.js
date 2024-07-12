@@ -7,7 +7,7 @@ import Header from '../header/header';
 
 const EditPost = () => {
   const postId = useParams().postId;
-  const token = localStorage.getItem('token');
+  const token = useParams().token;
   // url for editing and getting a post
   const url = `http://localhost:5000/post/${postId}`;
   const imageUrl = 'http://localhost:5000/uploads/';
@@ -55,9 +55,7 @@ const EditPost = () => {
   }
 
   function handlePic (imageUrl) {
-    const imgUrl =  `http://localhost:5000/post/${id}/${imageUrl}`
-
-    console.log('here');
+    const imgUrl =  `http://localhost:5000/post/${id}/${imageUrl}`;
     (async () => {
       await fetch (imgUrl, {
         method: 'DELETE',
@@ -71,7 +69,7 @@ const EditPost = () => {
 
   return (
     <>
-    <Header caller={'post'}/>
+    <Header token={token}/>
     <div className="edit-container">
       <form onSubmit={handle} className="editform">
         <div className="editportion">
