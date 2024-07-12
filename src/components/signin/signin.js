@@ -26,6 +26,7 @@ const Signin = () => {
       navigate('/error');
     }
   }
+
   return (
     <>
     <div className='s-img'>
@@ -51,4 +52,5 @@ const Signin = () => {
   )
 };
 
+// exporting
 export default Signin;
