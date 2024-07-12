@@ -12,7 +12,7 @@ const Header = ({ caller, token }) => {
   }
   const [ ownerImage, setOwnerImage ] = useState(require('./assets/user.png'));
   (async () => {
-    const image = await helper.getUserPic();
+    const image = await helper.getUserPic(token);
     if (image !== null) {
       setOwnerImage(`http://localhost:5000/uploads/${image}`);
     }
