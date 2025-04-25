@@ -1,67 +1,67 @@
 .input-class {
-    display: block;
-    height: 50px;
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid lightgrey;
+  display: block;
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+  padding-left: 10px;
 }
 
 input:hover {
-    background-color: #dfedeb;
+  background-color: #dfedeb;
 }
 
 .label-class {
-    display: block;
+  display: block;
 }
 
 button:hover {
-    background-color: #7bb0f0;
+  background-color: #7bb0f0;
 }
 
 .form-class {
-    padding: 20px;
-    width: 90%;
-    max-width: 550px;
-    border: 1px solid lightgray;
-    border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 550px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
 }
 
 .form-element {
-    margin: 10px;
+  margin: 10px;
 }
 
 .form-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 23vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 23vh;
 }
 
 .s-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    background-color: #f5f7fa;
-    border: 1px solid lightgray;
-    width: 100%;
-    position: relative;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #f5f7fa;
+  border: 1px solid lightgray;
+  width: 100%;
+  position: relative;
 }
 
 .s-word {
-    width: 85px;
-    height: 100%;
+  width: 85px;
+  height: 100%;
 }
 
 .s-word1:hover {
-    background-color: white;
-    border: 1px solid lightgray;
+  background-color: white;
+  border: 1px solid lightgray;
 }
 
 .s-word1 {
-    border-radius: 8px;
-    padding: 5px;
-    right: 6px;
-    position: absolute;
+  border-radius: 8px;
+  padding: 5px;
+  right: 6px;
+  position: absolute;
 }

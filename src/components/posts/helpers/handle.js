@@ -6,14 +6,12 @@ const handle = {
     let response;
     try {
       response = await fetch(url, {
-        method: 'PUT',
+        method: "PUT",
         headers: {
           token,
         },
       });
-    } catch {
-
-    }
+    } catch {}
 
     return response;
   },
@@ -23,17 +21,15 @@ const handle = {
     let response;
     try {
       response = await fetch(url, {
-        method: 'DELETE',
+        method: "DELETE",
         headers: {
           token,
         },
       });
-    } catch {
-
-    }
+    } catch {}
 
     return response;
-  }
+  },
 };
 
 export default handle;

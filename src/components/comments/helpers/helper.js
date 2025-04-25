@@ -6,18 +6,18 @@ const handle = {
     let response;
     try {
       response = await fetch(url, {
-        method: 'PUT',
+        method: "PUT",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
           token,
         },
         body: JSON.stringify({ comment }),
       });
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
     return response;
-  }
+  },
 };
 
 export default handle;
